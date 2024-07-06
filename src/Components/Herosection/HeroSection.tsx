@@ -26,7 +26,15 @@ const HeroSection = () => {
       <div className="hero-section__content2">
         <img src="./images/heroCenterimg.png" alt="" />
       </div>
-      <div className="hero-section__content3"></div>
+      <div className="hero-section__content3">
+        {" "}
+        <h2>what is genesis dao</h2>
+        <h1>
+          A groundbreaking platform that not only provides staking services but
+          also lets you earn from your own crypto assets.
+        </h1>
+        <div></div>
+      </div>
     </div>
   );
 };
