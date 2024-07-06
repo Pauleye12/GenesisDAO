@@ -1,0 +1,41 @@
+.navbar {
+  background-color: #000000;
+  padding: 10px 150px;
+  border-bottom: 1px solid #ffffff;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &--logo {
+    }
+    &--links {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+      max-width: 300px;
+      width: 100%;
+    }
+    &--socials {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 300px;
+      width: 100%;
+      gap: 5px;
+      &--link {
+        background-color: #2d2d2d;
+        border-radius: 100%;
+        display: grid;
+        place-items: center;
+        padding: 13px;
+      }
+      .enter-app {
+        background-color: transparent;
+        padding: 12px 18px;
+        border: 1px solid #ffffff;
+        border-radius: 8px;
+      }
+    }
+  }
+}

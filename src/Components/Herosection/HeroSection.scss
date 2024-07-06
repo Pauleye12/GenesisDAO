@@ -1,0 +1,30 @@
+.hero-section {
+  width: 100%;
+  background-color: #000000;
+  padding: 90px 150px 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__leftImg {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    max-width: 400px;
+  }
+  &__rightImg {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 100%;
+    max-width: 400px;
+  }
+  &__content1 {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+  }
+}
