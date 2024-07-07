@@ -1,0 +1,51 @@
+.trading-live {
+  width: 100%;
+  background-color: #000000;
+  padding: 90px 150px 20px;
+  position: relative;
+  display: grid;
+  place-items: center;
+  color: white;
+  &__left {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    max-width: 500px;
+  }
+  &__right {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 100%;
+    max-width: 500px;
+  }
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+    &--img {
+      max-width: 400px;
+      width: 100%;
+    }
+    &--h1 {
+      font-size: 55px;
+      font-weight: 600;
+    }
+    &--a {
+      background-color: white;
+      color: black;
+      padding: 6px 15px;
+      border-radius: 8px;
+      margin-top: 40px;
+      display: flex;
+      gap: 3px;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+    }
+  }
+}

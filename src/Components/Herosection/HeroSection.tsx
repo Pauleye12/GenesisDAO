@@ -24,7 +24,7 @@ const HeroSection = () => {
         <a href="#">Enter App</a>
       </div>
       <div className="hero-section__content2">
-        <img src="./images/heroCenterimg.png" alt="" />
+        {/* <img src="./images/heroCenterimg.png" alt="" /> */}
       </div>
       <div className="hero-section__content3">
         {" "}
@@ -33,7 +33,28 @@ const HeroSection = () => {
           A groundbreaking platform that not only provides staking services but
           also lets you earn from your own crypto assets.
         </h1>
-        <div></div>
+        <div className="hero-section__content3--paragraph">
+          <p className="hero-section__content3--paragraph--p">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+            pariatur.{" "}
+            <p className="hero-section__content3--paragraph--br">
+              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+              officia deserunt mollit anim id est laborum.
+            </p>
+          </p>
+          <p className="hero-section__content3--paragraph--p">
+            Nemo enim ipsam voluptatem quia voluptas sit as perna tur aut odit
+            aut fugit, sed quia consequuntur magni dolores eos qui ratione
+            voluptatem sequi nesciunt.{" "}
+            <p className="hero-section__content3--paragraph--br">
+              Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+              consectetur, adipisci velit, sed quia non numquam eius modi
+              tempora incidunt ut labore et.
+            </p>
+          </p>
+        </div>
       </div>
     </div>
   );
