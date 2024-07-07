@@ -5,6 +5,7 @@ import TradingLive from "./Components/TradingLive/TradingLive";
 import Tokenomics from "./Components/Tokenomics/Tokenomics";
 import Integration from "./Components/Integration/Integration";
 import Faq from "./Components/FAQ/Faq";
+import Footer from "./Components/Footer/Footer";
 
 const App = () => {
   return (
@@ -15,6 +16,7 @@ const App = () => {
       <Tokenomics />
       <Integration />
       <Faq />
+      <Footer />
     </div>
   );
 };
