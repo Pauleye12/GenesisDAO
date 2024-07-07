@@ -1,4 +1,3 @@
-import React from "react";
 import "./Integration.scss";
 
 const Integration = () => {

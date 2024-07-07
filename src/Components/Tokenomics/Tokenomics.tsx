@@ -1,4 +1,3 @@
-import React from "react";
 import "./Tokenomics.scss";
 const Tokenomics = () => {
   return (
