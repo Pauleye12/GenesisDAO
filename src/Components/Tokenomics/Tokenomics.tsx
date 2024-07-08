@@ -24,6 +24,12 @@ const Tokenomics = () => {
             alt=""
           />
           <div className="tokenomics__content--card--contents">
+            <div className="tokenomics__content--card--contents--mobileCategories">
+              <div>
+                <p>Flywheel Mechanics</p>
+                <img src="./images/arrowdown.png" alt="" />
+              </div>
+            </div>
             <h2>
               The initial phase will be drive by the flywheel mechanics. A
               positive feedback cycle

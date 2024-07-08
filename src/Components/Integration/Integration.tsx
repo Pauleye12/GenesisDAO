@@ -13,6 +13,18 @@ const Integration = () => {
         src="./images/integrationRightImg.png"
         alt=""
       />
+
+      {/* Mobile */}
+      <img
+        className="integration__imgLeftMobile"
+        src="./images/integrationMobileLeft.png"
+        alt=""
+      />
+      <img
+        className="integration__imgRightMobile"
+        src="./images/integrationMobileRight.png"
+        alt=""
+      />
       <div className="integration__content">
         <div className="integration__content--texts">
           <h1 className="integration__content--texts--h1">

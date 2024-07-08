@@ -5,6 +5,11 @@ const Footer = () => {
     <div className="footer">
       <h1 className="footer__text">GENESIS</h1>
       <img className="footer__img" src="./images/footerImg.png" alt="" />
+      <img
+        className="footer__imgMobile"
+        src="./images/footerImgMobile.png"
+        alt=""
+      />
 
       <div className="footer__wrapper">
         <div className="footer__wrapper--content">
@@ -22,6 +27,12 @@ const Footer = () => {
           </a>
         </div>
         <div className="footer__wrapper--foot">
+          <div className="footer__wrapper--foot--mobileSocials">
+            <img src="./images/telegram.png" alt="" />
+            <img src="./images/discord.png" alt="" />
+            <img src="./images/book.png" alt="" />
+            <img src="./images/x.png" alt="" />
+          </div>
           <div className="footer__wrapper--foot--left">
             <div className="footer__wrapper--foot--left--1">
               <p className="footer__wrapper--foot--left--1--p">

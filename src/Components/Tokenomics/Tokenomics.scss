@@ -65,6 +65,34 @@ $desktop: 1024px;
         display: flex;
         flex-direction: column;
         gap: 20px;
+        &--mobileCategories {
+          display: none;
+        }
+        @media (max-width: $mobile) {
+          &--mobileCategories {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+            align-items: center;
+            background-image: linear-gradient(60deg, #af6ffe, #0fa4f4);
+            padding: 2px;
+            border-radius: 10px;
+            color: white;
+            margin-bottom: 20px;
+            div {
+              background-color: #0b0b0b;
+              padding: 15px;
+              font-weight: 600;
+              border-radius: 6px;
+              display: flex;
+              width: 100%;
+              justify-content: space-between;
+              align-items: center;
+            }
+            p {
+            }
+          }
+        }
         h2 {
           font-size: 22px;
           font-weight: 500;
@@ -122,6 +150,9 @@ $desktop: 1024px;
 
 @media (max-width: $mobile) {
   .tokenomics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &__content {
       &--card {
         flex-direction: column;
@@ -156,6 +187,11 @@ $desktop: 1024px;
       &--details {
         overflow: scroll;
         width: 400px;
+        &--card {
+          padding: 26px;
+          min-width: 210px;
+          height: 170px;
+        }
       }
     }
   }
