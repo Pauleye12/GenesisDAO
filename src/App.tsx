@@ -10,7 +10,9 @@ import Footer from "./Components/Footer/Footer";
 const App = () => {
   return (
     <div className="app">
-      <Navbar />
+      <div className="deskNav">
+        <Navbar />
+      </div>
       <HeroSection />
       <TradingLive />
       <Tokenomics />

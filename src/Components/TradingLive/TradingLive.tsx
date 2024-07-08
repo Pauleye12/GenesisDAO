@@ -13,6 +13,16 @@ const TradingLive = () => {
         src="./images/tradingright.png"
         alt=""
       />
+      <img
+        src="./images/tradingMobileRight.png"
+        alt=""
+        className="trading-live__rightMobile"
+      />
+      <img
+        src="./images/tradingMobileLeft.png"
+        alt=""
+        className="trading-live__leftMobile"
+      />
       <div className="blurbg"></div>
       <div className="trading-live__content">
         <img

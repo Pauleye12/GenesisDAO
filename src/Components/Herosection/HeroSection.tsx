@@ -1,3 +1,4 @@
+import Navbar from "../Navbar/Navbar";
 import "./HeroSection.scss";
 
 const HeroSection = () => {
@@ -13,8 +14,21 @@ const HeroSection = () => {
         src="./images/heroright.png"
         alt=""
       />
+      <img
+        src="./images/mobileHeroLeft.png"
+        alt=""
+        className="hero-section__leftMobile"
+      />
+      <img
+        src="./images/mobileHeroRight.png"
+        alt=""
+        className="hero-section__rightMobile"
+      />
       <div className="blurbg"></div>
       <div className="hero-section__content">
+        <div className="mobileNav">
+          <Navbar />
+        </div>
         <div className="hero-section__content--content1">
           <h3>Welcome to Genesis DAO</h3>
           <h1>Explore the essence of Genesis DAO</h1>
@@ -24,8 +38,9 @@ const HeroSection = () => {
           </p>
           <a href="#">Enter App</a>
         </div>
-        <div className="hero-section__content--content2">
-          {/* <img src="./images/heroCenterimg.png" alt="" /> */}
+        <div className="hero-section__content--content2"></div>
+        <div className="hero-section__content--content2Mobile">
+          {/* <img src="./images/mobileGenesis.png" alt="" /> */}
         </div>
         <div className="hero-section__content--content3">
           {" "}

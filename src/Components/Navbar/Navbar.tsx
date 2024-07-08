@@ -34,6 +34,9 @@ const Navbar = () => {
             {" "}
             Enter App{" "}
           </a>
+          <button className="mobileToggle">
+            <img src="./images/mobileToggle.png" alt="" />
+          </button>
         </div>
       </div>
     </div>

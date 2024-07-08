@@ -1,3 +1,7 @@
+$mobile: 680px;
+$tablet: 1030px;
+$desktop: 1024px;
+
 .trading-live {
   width: 100%;
   background-color: #000000;
@@ -19,6 +23,10 @@
     right: 0px;
     width: 100%;
     max-width: 500px;
+  }
+  &__rightMobile,
+  &__leftMobile {
+    display: none;
   }
   .blurbg {
     height: 300px;
@@ -59,6 +67,57 @@
       align-items: center;
       justify-content: center;
       font-weight: 600;
+    }
+  }
+}
+
+//Media queries
+
+@media (max-width: $mobile) {
+  .trading-live {
+    &__left,
+    &__right {
+      display: none;
+    }
+    &__rightMobile {
+      position: absolute;
+      display: block;
+      width: 100%;
+      max-width: 170px;
+      right: 0px;
+      top: 0px;
+    }
+
+    &__leftMobile {
+      position: absolute;
+      display: block;
+      width: 100%;
+      max-width: 180px;
+      left: 0px;
+      top: 310px;
+    }
+    .blurbg {
+      top: 30%;
+      height: 400px;
+      width: 400px;
+    }
+
+    &__content {
+      gap: 50px;
+      &--h1 {
+        font-size: 40px;
+      }
+      &--a {
+        margin-top: 20px;
+        padding: 15px 60px;
+        font-weight: 600;
+        font-size: 20px;
+        gap: 15px;
+        border-radius: 20px;
+        img {
+          width: 40px;
+        }
+      }
     }
   }
 }
