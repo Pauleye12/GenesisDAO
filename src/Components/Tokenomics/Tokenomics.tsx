@@ -86,13 +86,37 @@ const Tokenomics = () => {
   let componentToRender;
 
   if (activeSection.toLowerCase() === "flywheel mechanics") {
-    componentToRender = <Sections info={TokenomicsInfo[0]} />;
+    componentToRender = (
+      <Sections
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        info={TokenomicsInfo[0]}
+      />
+    );
   } else if (activeSection.toLowerCase() === "treasury") {
-    componentToRender = <Sections info={TokenomicsInfo[1]} />;
+    componentToRender = (
+      <Sections
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        info={TokenomicsInfo[1]}
+      />
+    );
   } else if (activeSection.toLowerCase() === "staking") {
-    componentToRender = <Sections info={TokenomicsInfo[2]} />;
+    componentToRender = (
+      <Sections
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        info={TokenomicsInfo[2]}
+      />
+    );
   } else if (activeSection.toLowerCase() === "dao") {
-    componentToRender = <Sections info={TokenomicsInfo[3]} />;
+    componentToRender = (
+      <Sections
+        activeSection={activeSection}
+        setActiveSection={setActiveSection}
+        info={TokenomicsInfo[3]}
+      />
+    );
   } else {
     componentToRender = <div></div>;
   }

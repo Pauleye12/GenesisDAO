@@ -1,5 +1,5 @@
 import "./Tokenomics.scss";
-import React from "react";
+import React, { useState } from "react";
 
 interface cont {
   ImgURL: string;
@@ -11,9 +11,16 @@ interface cont {
 
 interface SectionsProps {
   info: cont;
+  activeSection: string;
+  setActiveSection: (section: string) => void;
 }
 
-const Sections: React.FC<SectionsProps> = ({ info }) => {
+const Sections: React.FC<SectionsProps> = ({
+  info,
+  activeSection,
+  setActiveSection,
+}) => {
+  const [dropdown, setDropdown] = useState(false);
   return (
     <div className="tokenomics__content--card">
       <img
@@ -23,10 +30,41 @@ const Sections: React.FC<SectionsProps> = ({ info }) => {
       />
       <div className="tokenomics__content--card--contents">
         <div className="tokenomics__content--card--contents--mobileCategories">
-          <div>
-            <p>Flywheel Mechanics</p>
+          <div
+            onClick={() => setDropdown(!dropdown)}
+            className="tokenomics__content--card--contents--mobileCategories--div"
+          >
+            <p>{activeSection}</p>
             <img src="./images/arrowdown.png" alt="" />
           </div>
+          {dropdown && (
+            <div onClick={() => setDropdown(false)} className="dropdownMobile">
+              <p
+                onClick={() => setActiveSection("flywheel mechanics")}
+                className="dropdownMobileContent"
+              >
+                Flywheel Mechanics
+              </p>
+              <p
+                onClick={() => setActiveSection("treasury")}
+                className="dropdownMobileContent"
+              >
+                Treasury
+              </p>
+              <p
+                onClick={() => setActiveSection("staking")}
+                className="dropdownMobileContent"
+              >
+                Staking
+              </p>
+              <p
+                onClick={() => setActiveSection("dao")}
+                className="dropdownMobileContent"
+              >
+                DAO
+              </p>
+            </div>
+          )}
         </div>
         <h2>{info.header}</h2>
         <img
