@@ -16,8 +16,13 @@ $desktop: 1024px;
     max-width: 1100px;
     width: 100%;
     align-items: center;
-    &--card {
+    &--cards {
       position: relative;
+      background-color: #0b0b0b;
+      border: 1px solid #ffffff14;
+      border-radius: 20px;
+    }
+    &--card {
       background-color: #0b0b0b;
       color: white;
       padding: 30px;
@@ -25,7 +30,7 @@ $desktop: 1024px;
       display: flex;
       align-items: center;
       gap: 30px;
-      border: 1px solid #ffffff14;
+
       &--sections {
         position: absolute;
         left: 50%;
@@ -187,6 +192,7 @@ $desktop: 1024px;
       &--details {
         overflow: scroll;
         width: 400px;
+        padding-bottom: 25px;
         &--card {
           padding: 26px;
           min-width: 210px;
@@ -195,4 +201,7 @@ $desktop: 1024px;
       }
     }
   }
+}
+
+.separator {
 }

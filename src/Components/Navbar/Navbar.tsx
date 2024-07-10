@@ -1,6 +1,6 @@
 import "./Navbar.scss";
 
-const Navbar = () => {
+const Navbar = ({ isMobileNavOpen, setIsMobileNavOpen }) => {
   return (
     <div className="navbar">
       <div className="navbar__content">
@@ -34,8 +34,18 @@ const Navbar = () => {
             {" "}
             Enter App{" "}
           </a>
-          <button className="mobileToggle">
-            <img src="./images/mobileToggle.png" alt="" />
+          <button
+            onClick={() => setIsMobileNavOpen(!isMobileNavOpen)}
+            className="mobileToggle"
+          >
+            <img
+              src={
+                isMobileNavOpen
+                  ? "./images/closeMenu.png"
+                  : "./images/mobileToggle.png"
+              }
+              alt=""
+            />
           </button>
         </div>
       </div>

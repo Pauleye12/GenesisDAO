@@ -59,11 +59,13 @@ $desktop: 1024px;
     &--a {
       background-color: white;
       color: black;
-      padding: 6px 15px;
+      padding: 0px 15px;
       border-radius: 8px;
       margin-top: 40px;
       display: flex;
+      height: 52px;
       gap: 3px;
+      font-size: 18px;
       align-items: center;
       justify-content: center;
       font-weight: 600;
@@ -109,11 +111,10 @@ $desktop: 1024px;
       }
       &--a {
         margin-top: 20px;
-        padding: 15px 60px;
-        font-weight: 600;
-        font-size: 20px;
+        padding: 0px 60px;
+
         gap: 15px;
-        border-radius: 20px;
+        border-radius: 15px;
         img {
           width: 40px;
         }

@@ -11,6 +11,7 @@ $desktop: 1024px;
   width: 100%;
   &__content {
     display: flex;
+    position: relative;
     justify-content: space-between;
     align-items: center;
     max-width: 1100px;
@@ -19,6 +20,10 @@ $desktop: 1024px;
     }
     &--links {
       display: flex;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
       align-items: center;
       justify-content: space-between;
       gap: 4px;
@@ -48,6 +53,7 @@ $desktop: 1024px;
         padding: 12px 18px;
         border: 1px solid #ffffff;
         border-radius: 8px;
+        text-wrap: nowrap;
       }
     }
   }
@@ -61,7 +67,7 @@ $desktop: 1024px;
 @media (max-width: $mobile) {
   .navbar {
     background-color: transparent;
-    padding: 10px 15px;
+    padding: 10px 0px;
     &__content {
       &--logo {
       }
@@ -70,12 +76,20 @@ $desktop: 1024px;
       }
       &--socials {
         justify-content: center;
-        max-width: fit-content;
+        max-width: 200px;
         width: 100%;
-        gap: 30px;
+        gap: 20px;
         .mobileToggle {
-          display: flex;
+          display: block;
           background-color: transparent;
+          border: none;
+          max-width: 40px;
+          width: 100%;
+
+          img {
+            max-width: 40px;
+            width: 100%;
+          }
         }
         &--link {
           display: none;
