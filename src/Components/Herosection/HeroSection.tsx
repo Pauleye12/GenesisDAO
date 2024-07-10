@@ -4,7 +4,7 @@ import Navbar from "../Navbar/Navbar";
 import "./HeroSection.scss";
 
 const HeroSection = () => {
-  const [isMobileNavOpen, setIsMobileNavOpen] = useState(true);
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   return (
     <div className="hero-section">
       <img

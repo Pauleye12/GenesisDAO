@@ -82,7 +82,7 @@ const Tokenomics = () => {
     },
   ];
 
-  const [activeSection, setActiveSection] = useState("treasury");
+  const [activeSection, setActiveSection] = useState("flywheel mechanics");
   let componentToRender;
 
   if (activeSection.toLowerCase() === "flywheel mechanics") {
