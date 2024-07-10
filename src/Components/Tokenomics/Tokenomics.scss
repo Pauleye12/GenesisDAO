@@ -45,6 +45,7 @@ $desktop: 1024px;
           border-radius: 6px;
           color: white;
           transform: translateY(-7px);
+          cursor: pointer;
           p {
             background-color: #0b0b0b;
             padding: 8px 15px;
@@ -58,6 +59,7 @@ $desktop: 1024px;
           color: rgba(255, 255, 255, 0.194);
           padding: 10px 15px;
           border-radius: 9px;
+          cursor: pointer;
         }
       }
       &--img {

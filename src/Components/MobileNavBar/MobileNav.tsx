@@ -1,5 +1,10 @@
 import "./MobileNav.scss";
-const MobileNav = ({ setIsMobileNavOpen }) => {
+import React from "react";
+
+interface MobileNavProps {
+  setIsMobileNavOpen: (isOpen: boolean) => void;
+}
+const MobileNav: React.FC<MobileNavProps> = ({ setIsMobileNavOpen }) => {
   return (
     <div className="mobile-nav">
       <div

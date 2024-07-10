@@ -1,6 +1,15 @@
 import "./Navbar.scss";
+import React from "react";
 
-const Navbar = ({ isMobileNavOpen, setIsMobileNavOpen }) => {
+interface NavbarProps {
+  isMobileNavOpen: boolean;
+  setIsMobileNavOpen: (isOpen: boolean) => void;
+}
+
+const Navbar: React.FC<NavbarProps> = ({
+  isMobileNavOpen,
+  setIsMobileNavOpen,
+}) => {
   return (
     <div className="navbar">
       <div className="navbar__content">

@@ -11,7 +11,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="deskNav">
-        <Navbar />
+        <Navbar isMobileNavOpen={false} setIsMobileNavOpen={() => {}} />
       </div>
       <HeroSection />
       <TradingLive />

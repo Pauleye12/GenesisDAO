@@ -1,11 +1,24 @@
 import "./Tokenomics.scss";
+import React from "react";
 
-const Sections = () => {
+interface cont {
+  ImgURL: string;
+  header: string;
+  details: {
+    text: string;
+  }[];
+}
+
+interface SectionsProps {
+  info: cont;
+}
+
+const Sections: React.FC<SectionsProps> = ({ info }) => {
   return (
     <div className="tokenomics__content--card">
       <img
         className="tokenomics__content--card--img"
-        src="./images/tokenomicsImg.png"
+        src={info.ImgURL}
         alt=""
       />
       <div className="tokenomics__content--card--contents">
@@ -15,41 +28,19 @@ const Sections = () => {
             <img src="./images/arrowdown.png" alt="" />
           </div>
         </div>
-        <h2>
-          The initial phase will be drive by the flywheel mechanics. A positive
-          feedback cycle
-        </h2>
+        <h2>{info.header}</h2>
         <img
           className="tokenomics__content--card--contents--img"
           src="./images/tokenomicsImg.png"
           alt=""
         />
         <ul>
-          <li>
-            {" "}
-            <img src="./images/tick.png" alt="" />{" "}
-            <p>Staking rewards people with generous APY.</p>{" "}
-          </li>
-          <li>
-            {" "}
-            <img src="./images/tick.png" alt="" />{" "}
-            <p>Buy pressure builds up, and more people stake</p>{" "}
-          </li>
-          <li>
-            {" "}
-            <img src="./images/tick.png" alt="" />{" "}
-            <p>The token value increases / APY starts slowing down</p>{" "}
-          </li>
-          <li>
-            {" "}
-            <img src="./images/tick.png" alt="" />{" "}
-            <p>Selling/unstaking feeds the treasury</p>{" "}
-          </li>
-          <li>
-            {" "}
-            <img src="./images/tick.png" alt="" />{" "}
-            <p>The treasury is well-fed, and so heavy marketing begins</p>{" "}
-          </li>
+          {info.details.map((ads, index) => (
+            <li key={index}>
+              {" "}
+              <img src="./images/tick.png" alt="" /> <p>{ads.text}</p>{" "}
+            </li>
+          ))}
         </ul>
       </div>
     </div>

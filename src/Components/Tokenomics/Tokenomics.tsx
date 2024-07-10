@@ -1,25 +1,148 @@
 import Sections from "./Sections";
+import { useState } from "react";
 import "./Tokenomics.scss";
 const Tokenomics = () => {
+  const TokenomicsInfo = [
+    {
+      ImgURL: "./images/tokenomicsImg.png",
+      header:
+        "The initial phase will be drive by the flywheel mechanics. A positive feedback cycle",
+      details: [
+        {
+          text: "Staking rewards people with generous APY.",
+        },
+        {
+          text: "Buy pressure builds up, and more people stake",
+        },
+        {
+          text: "The token value increases / APY starts slowing down",
+        },
+        {
+          text: "Selling/unstaking feeds the treasury",
+        },
+        {
+          text: "The token value increases / APY starts slowing down",
+        },
+      ],
+    },
+    {
+      ImgURL: "./images/tokenomicsImg.png",
+      header:
+        "The treasury funds are strategically allocated for marketing and to build new projects within the $GEN ecosystem",
+      details: [
+        {
+          text: "Taxes will feed the treasury.",
+        },
+        {
+          text: "Treasury funds will be used to develop new projects within the ecosystem.",
+        },
+        {
+          text: "Treasury funds will be used for marketing purposes.",
+        },
+      ],
+    },
+
+    {
+      ImgURL: "./images/tokenomicsImg.png",
+      header:
+        "Stake $GEN and earn more rewards, help the ecosystem grow. WIN-WIN",
+      details: [
+        {
+          text: "Stake and earn.",
+        },
+        {
+          text: "Interactive dashboard to monitor your profits.",
+        },
+        {
+          text: "Total control over tokens, unstake at anytime.",
+        },
+      ],
+    },
+    {
+      ImgURL: "./images/tokenomicsImg.png",
+      header:
+        "The community will vote for a product to be built, examples would be; Genesis launchpad, an online betting platform, expansion into AI or any trends in 2024",
+      details: [
+        {
+          text: "Members submit proposals detailing project objectives and benefits.",
+        },
+        {
+          text: "Proposals are vetted for alignment with the DAO's goals and practicality.",
+        },
+        {
+          text: "Members vote to select proposals for implementation.",
+        },
+        {
+          text: "Projects are executed with defined timelines and updates",
+        },
+        {
+          text: "Projects end with an outcome evaluation and community feedback",
+        },
+      ],
+    },
+  ];
+
+  const [activeSection, setActiveSection] = useState("treasury");
+  let componentToRender;
+
+  if (activeSection.toLowerCase() === "flywheel mechanics") {
+    componentToRender = <Sections info={TokenomicsInfo[0]} />;
+  } else if (activeSection.toLowerCase() === "treasury") {
+    componentToRender = <Sections info={TokenomicsInfo[1]} />;
+  } else if (activeSection.toLowerCase() === "staking") {
+    componentToRender = <Sections info={TokenomicsInfo[2]} />;
+  } else if (activeSection.toLowerCase() === "dao") {
+    componentToRender = <Sections info={TokenomicsInfo[3]} />;
+  } else {
+    componentToRender = <div></div>;
+  }
   return (
     <div className="tokenomics">
       <div className="tokenomics__content">
         <div className="tokenomics__content--cards">
           <div className="tokenomics__content--card--sections">
-            <div className="tokenomics__content--card--sections--active">
+            <div
+              onClick={() => setActiveSection("flywheel mechanics")}
+              className={
+                activeSection.toLowerCase() === "flywheel mechanics"
+                  ? "tokenomics__content--card--sections--active"
+                  : "tokenomics__content--card--sections--inactive"
+              }
+            >
               <p> Flywheel mechanics </p>
             </div>
-            <div className="tokenomics__content--card--sections--inactive">
+            <div
+              onClick={() => setActiveSection("treasury")}
+              className={
+                activeSection.toLowerCase() === "treasury"
+                  ? "tokenomics__content--card--sections--active"
+                  : "tokenomics__content--card--sections--inactive"
+              }
+            >
               <p>Treasury</p>
             </div>
-            <div className="tokenomics__content--card--sections--inactive">
+            <div
+              onClick={() => setActiveSection("staking")}
+              className={
+                activeSection.toLowerCase() === "staking"
+                  ? "tokenomics__content--card--sections--active"
+                  : "tokenomics__content--card--sections--inactive"
+              }
+            >
               <p>Staking</p>
             </div>
-            <div className="tokenomics__content--card--sections--inactive">
+            <div
+              onClick={() => setActiveSection("dao")}
+              className={
+                activeSection.toLowerCase() === "dao"
+                  ? "tokenomics__content--card--sections--active"
+                  : "tokenomics__content--card--sections--inactive"
+              }
+            >
               <p>DAO</p>
             </div>
           </div>
-          <Sections />
+          {componentToRender}
         </div>
         <div className="tokenomics__content--details">
           <div className="tokenomics__content--details--card">
