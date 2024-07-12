@@ -1,4 +1,33 @@
 import "./TradingLive.scss";
+import { motion } from "framer-motion";
+
+const BtnHover = {
+  animate: {
+    scale: 1,
+    transition: {
+      duration: 0.75,
+
+      type: "spring",
+      ease: "easeInOut",
+    },
+  },
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.75,
+
+      type: "spring",
+      ease: "easeInOut",
+    },
+  },
+  onTap: {
+    scale: 1,
+    transition: {
+      duration: 0.25,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const TradingLive = () => {
   return (
@@ -31,14 +60,18 @@ const TradingLive = () => {
           alt=""
         />
         <h1 className="trading-live__content--h1">Trading is live now! </h1>
-        <a
+        <motion.a
           className="trading-live__content--a"
           href="#"
           target="_blank"
           rel="noopener noreferrer"
+          variants={BtnHover}
+          whileTap="onTap"
+          whileHover="hover"
+          animate="animate"
         >
           Buy on Uniswap <img src="./images/uniswaplogo.png" alt="" />
-        </a>
+        </motion.a>
       </div>
     </div>
   );

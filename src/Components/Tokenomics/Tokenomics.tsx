@@ -1,6 +1,25 @@
 import Sections from "./Sections";
 import { useState } from "react";
 import "./Tokenomics.scss";
+import { motion } from "framer-motion";
+
+const SectionHover = {
+  initial: {
+    y: 0,
+    opacity: 0.9,
+    transition: {
+      duration: 0.25,
+      ease: "easeInOut",
+    },
+  },
+  hover: {
+    y: -10,
+    opacity: 1,
+    transition: {
+      duration: 0.25,
+    },
+  },
+};
 const Tokenomics = () => {
   const TokenomicsInfo = [
     {
@@ -125,7 +144,10 @@ const Tokenomics = () => {
       <div className="tokenomics__content">
         <div className="tokenomics__content--cards">
           <div className="tokenomics__content--card--sections">
-            <div
+            <motion.div
+              variants={SectionHover}
+              animate="initial"
+              whileHover="hover"
               onClick={() => setActiveSection("flywheel mechanics")}
               className={
                 activeSection.toLowerCase() === "flywheel mechanics"
@@ -134,8 +156,11 @@ const Tokenomics = () => {
               }
             >
               <p> Flywheel mechanics </p>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={SectionHover}
+              animate="initial"
+              whileHover="hover"
               onClick={() => setActiveSection("treasury")}
               className={
                 activeSection.toLowerCase() === "treasury"
@@ -144,8 +169,11 @@ const Tokenomics = () => {
               }
             >
               <p>Treasury</p>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={SectionHover}
+              animate="initial"
+              whileHover="hover"
               onClick={() => setActiveSection("staking")}
               className={
                 activeSection.toLowerCase() === "staking"
@@ -154,8 +182,11 @@ const Tokenomics = () => {
               }
             >
               <p>Staking</p>
-            </div>
-            <div
+            </motion.div>
+            <motion.div
+              variants={SectionHover}
+              animate="initial"
+              whileHover="hover"
               onClick={() => setActiveSection("dao")}
               className={
                 activeSection.toLowerCase() === "dao"
@@ -164,7 +195,7 @@ const Tokenomics = () => {
               }
             >
               <p>DAO</p>
-            </div>
+            </motion.div>
           </div>
           {componentToRender}
         </div>

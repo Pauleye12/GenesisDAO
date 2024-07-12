@@ -1,4 +1,33 @@
 import "./Integration.scss";
+import { motion } from "framer-motion";
+
+const BtnHover = {
+  animate: {
+    scale: 1,
+    transition: {
+      duration: 0.75,
+
+      type: "spring",
+      ease: "easeInOut",
+    },
+  },
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.75,
+
+      type: "spring",
+      ease: "easeInOut",
+    },
+  },
+  onTap: {
+    scale: 1,
+    transition: {
+      duration: 0.25,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Integration = () => {
   return (
@@ -33,9 +62,16 @@ const Integration = () => {
           <h2 className="integration__content--texts--h2">
             Seamless and Fast Integration
           </h2>
-          <a className="integration__content--texts--a" href="#">
+          <motion.a
+            variants={BtnHover}
+            whileTap="onTap"
+            whileHover="hover"
+            animate="animate"
+            className="integration__content--texts--a"
+            href="#"
+          >
             Enter App
-          </a>
+          </motion.a>
         </div>
         <div className="integration__content--cards">
           <div className="integration__content--cards--card">

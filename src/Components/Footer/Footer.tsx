@@ -1,4 +1,33 @@
 import "./Footer.scss";
+import { motion } from "framer-motion";
+
+const BtnHover = {
+  animate: {
+    scale: 1,
+    transition: {
+      duration: 0.75,
+
+      type: "spring",
+      ease: "easeInOut",
+    },
+  },
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.75,
+
+      type: "spring",
+      ease: "easeInOut",
+    },
+  },
+  onTap: {
+    scale: 1,
+    transition: {
+      duration: 0.25,
+      ease: "easeInOut",
+    },
+  },
+};
 
 const Footer = () => {
   return (
@@ -16,15 +45,19 @@ const Footer = () => {
           <h2 className="footer__wrapper--content--h2">
             Advanced decentralized DAO that understands you better over time
           </h2>
-          <a
+          <motion.a
             className="footer__wrapper--content--a"
             href="#"
             target="_blank"
             rel="noopener noreferrer"
+            variants={BtnHover}
+            whileTap="onTap"
+            whileHover="hover"
+            animate="animate"
           >
             {" "}
             Enter App
-          </a>
+          </motion.a>
         </div>
         <div className="footer__wrapper--foot">
           <div className="footer__wrapper--foot--mobileSocials">
