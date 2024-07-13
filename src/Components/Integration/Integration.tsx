@@ -1,6 +1,40 @@
 import "./Integration.scss";
 import { motion } from "framer-motion";
 
+const paragraphAnime = {
+  initial1: {
+    x: -300,
+    opacity: 0,
+  },
+  initial2: {
+    x: 300,
+    opacity: 0,
+  },
+  inView: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+
+      ease: "easeInOut",
+    },
+  },
+};
+const MaintextAnime = {
+  initial: {
+    y: -70,
+    opacity: 0,
+  },
+  inView: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.75,
+      delay: 0.5,
+      ease: "easeInOut",
+    },
+  },
+};
 const BtnHover = {
   animate: {
     scale: 1,
@@ -56,12 +90,22 @@ const Integration = () => {
       />
       <div className="integration__content">
         <div className="integration__content--texts">
-          <h1 className="integration__content--texts--h1">
+          <motion.h1
+            variants={paragraphAnime}
+            whileInView="inView"
+            initial="initial1"
+            className="integration__content--texts--h1"
+          >
             CONNECT WITH GENESIS DAO
-          </h1>
-          <h2 className="integration__content--texts--h2">
+          </motion.h1>
+          <motion.h2
+            variants={MaintextAnime}
+            whileInView="inView"
+            initial="initial"
+            className="integration__content--texts--h2"
+          >
             Seamless and Fast Integration
-          </h2>
+          </motion.h2>
           <motion.a
             variants={BtnHover}
             whileTap="onTap"
@@ -74,24 +118,39 @@ const Integration = () => {
           </motion.a>
         </div>
         <div className="integration__content--cards">
-          <div className="integration__content--cards--card">
+          <motion.div
+            variants={BtnHover}
+            whileHover="hover"
+            animate="animate"
+            className="integration__content--cards--card"
+          >
             <img src="./images/buy.png" alt="" />
             <h1>Buy</h1>
             <p>Take a part in our presale and get unrealistic airdrops.</p>
             <a href="">Join DAO now</a>
-          </div>
-          <div className="integration__content--cards--card">
+          </motion.div>
+          <motion.div
+            variants={BtnHover}
+            whileHover="hover"
+            animate="animate"
+            className="integration__content--cards--card"
+          >
             <img src="./images/stake.png" alt="" />
             <h1>Stake</h1>
             <p>Stake your token with Genesis DAO to earn passive income</p>
             <a href="">Stake now</a>
-          </div>
-          <div className="integration__content--cards--card">
+          </motion.div>
+          <motion.div
+            variants={BtnHover}
+            whileHover="hover"
+            animate="animate"
+            className="integration__content--cards--card"
+          >
             <img src="./images/refer.png" alt="" />
             <h1>Refer</h1>
             <p>Invite new users by using your personal ref code</p>
             <a href="">Refer friends</a>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

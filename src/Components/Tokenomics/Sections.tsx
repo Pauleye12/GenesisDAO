@@ -1,5 +1,36 @@
 import "./Tokenomics.scss";
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
+const listContainer = {
+  initial: {
+    opacity: 0,
+  },
+  inView: {
+    opacity: 1,
+    transition: {
+      duration: 0.01,
+      ease: "easeInOut",
+      staggerChildren: 0.3,
+      When: "beforeChildren",
+    },
+  },
+};
+
+const listItem = {
+  initial: {
+    x: 120,
+    opacity: 0,
+  },
+  inView: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.55,
+      ease: "easeInOut",
+    },
+  },
+};
 
 interface cont {
   ImgURL: string;
@@ -72,14 +103,18 @@ const Sections: React.FC<SectionsProps> = ({
           src="./images/tokenomicsImg.png"
           alt=""
         />
-        <ul>
+        <motion.ul
+          variants={listContainer}
+          animate="initial"
+          whileInView="inView"
+        >
           {info.details.map((ads, index) => (
-            <li key={index}>
+            <motion.li variants={listItem} key={index}>
               {" "}
               <img src="./images/tick.png" alt="" /> <p>{ads.text}</p>{" "}
-            </li>
+            </motion.li>
           ))}
-        </ul>
+        </motion.ul>
       </div>
     </div>
   );

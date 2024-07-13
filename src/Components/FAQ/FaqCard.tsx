@@ -1,5 +1,21 @@
 import React, { useState } from "react";
 import "./Faq.scss";
+import { motion } from "framer-motion";
+
+const listItem = {
+  initial: {
+    x: 120,
+    opacity: 0,
+  },
+  inView: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.55,
+      ease: "easeInOut",
+    },
+  },
+};
 
 interface FaqProps {
   faq: {
@@ -10,7 +26,10 @@ interface FaqProps {
 const FaqCard: React.FC<FaqProps> = ({ faq }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   return (
-    <div className=" faq__content--questions--card--exposed">
+    <motion.div
+      variants={listItem}
+      className=" faq__content--questions--card--exposed"
+    >
       <div className="faq__content--questions--card--exposed--div">
         <h1>{faq.question}</h1>
 
@@ -21,7 +40,7 @@ const FaqCard: React.FC<FaqProps> = ({ faq }) => {
         />
       </div>
       {isExpanded && <p>{faq.answer}</p>}
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,7 +2,7 @@ import { useState } from "react";
 import MobileNav from "../MobileNavBar/MobileNav";
 import Navbar from "../Navbar/Navbar";
 import "./HeroSection.scss";
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 const BtnHover = {
   animate: {
@@ -67,6 +67,37 @@ const paragraphAnime = {
   },
 };
 
+const welcomeAnime = {
+  initial: {
+    y: 100,
+    opacity: 0,
+  },
+  animate: {
+    y: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
+};
+
+const Genesis = {
+  initial: {
+    scale: 0,
+    opacity: 0,
+  },
+  animate: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      delay: 0.5,
+      duration: 0.8,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const HeroSection = () => {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
   return (
@@ -104,12 +135,24 @@ const HeroSection = () => {
           <MobileNav setIsMobileNavOpen={setIsMobileNavOpen} />
         )}
         <div className="hero-section__content--content1">
-          <h3>Welcome to Genesis DAO</h3>
-          <h1>Explore the essence of Genesis DAO</h1>
-          <p>
+          <motion.h3
+            variants={welcomeAnime}
+            initial="initial"
+            animate="animate"
+          >
+            Welcome to Genesis DAO
+          </motion.h3>
+          <motion.h1 variants={Genesis} initial="initial" animate="animate">
+            Explore the essence of Genesis DAO
+          </motion.h1>
+          <motion.p
+            variants={paragraphAnime}
+            initial="initial1"
+            animate="inView"
+          >
             Connect your wallets and secure your crypto assets with the unique
             and true decentralised organisation.
-          </p>
+          </motion.p>
           <motion.a
             variants={BtnHover}
             whileTap="onTap"

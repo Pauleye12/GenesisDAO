@@ -1,6 +1,19 @@
 import "./Footer.scss";
 import { motion } from "framer-motion";
 
+const GenesisTextAnime = {
+  initial: {
+    opacity: 0,
+  },
+  inView: {
+    opacity: 1,
+    transition: {
+      duration: 4,
+      ease: "easeInOut",
+    },
+  },
+};
+
 const BtnHover = {
   animate: {
     scale: 1,
@@ -29,10 +42,33 @@ const BtnHover = {
   },
 };
 
+const cardAnime = {
+  initial: {
+    scale: 0,
+    opacity: 0,
+  },
+  inView: {
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      ease: "easeInOut",
+      delay: 0.5,
+    },
+  },
+};
+
 const Footer = () => {
   return (
     <div className="footer">
-      <h1 className="footer__text">GENESIS</h1>
+      <motion.h1
+        variants={GenesisTextAnime}
+        animate="initial"
+        whileInView="inView"
+        className="footer__text"
+      >
+        GENESIS
+      </motion.h1>
       <img className="footer__img" src="./images/footerImg.png" alt="" />
       <img
         className="footer__imgMobile"
@@ -41,7 +77,12 @@ const Footer = () => {
       />
 
       <div className="footer__wrapper">
-        <div className="footer__wrapper--content">
+        <motion.div
+          variants={cardAnime}
+          whileInView="inView"
+          animate="initial"
+          className="footer__wrapper--content"
+        >
           <h2 className="footer__wrapper--content--h2">
             Advanced decentralized DAO that understands you better over time
           </h2>
@@ -58,7 +99,7 @@ const Footer = () => {
             {" "}
             Enter App
           </motion.a>
-        </div>
+        </motion.div>
         <div className="footer__wrapper--foot">
           <div className="footer__wrapper--foot--mobileSocials">
             <img src="./images/telegram.png" alt="" />

@@ -13,10 +13,31 @@ const SectionHover = {
     },
   },
   hover: {
-    y: -10,
+    y: -7,
     opacity: 1,
     transition: {
       duration: 0.25,
+    },
+  },
+};
+
+const BtnHover = {
+  animate: {
+    scale: 1,
+    transition: {
+      duration: 0.75,
+
+      type: "spring",
+      ease: "easeInOut",
+    },
+  },
+  hover: {
+    scale: 1.1,
+    transition: {
+      duration: 0.75,
+
+      type: "spring",
+      ease: "easeInOut",
     },
   },
 };
@@ -200,26 +221,51 @@ const Tokenomics = () => {
           {componentToRender}
         </div>
         <div className="tokenomics__content--details">
-          <div className="tokenomics__content--details--card">
+          <motion.div
+            variants={BtnHover}
+            whileHover="hover"
+            animate="animate"
+            className="tokenomics__content--details--card"
+          >
             <p>Holders</p>
             <h1>65.5K</h1>
-          </div>
-          <div className="tokenomics__content--details--card">
+          </motion.div>
+          <motion.div
+            variants={BtnHover}
+            whileHover="hover"
+            animate="animate"
+            className="tokenomics__content--details--card"
+          >
             <p>Market cap</p>
             <h1>$160M</h1>
-          </div>
-          <div className="tokenomics__content--details--card">
+          </motion.div>
+          <motion.div
+            variants={BtnHover}
+            whileHover="hover"
+            animate="animate"
+            className="tokenomics__content--details--card"
+          >
             <p>Treasury</p>
             <h1>$38k</h1>
-          </div>
-          <div className="tokenomics__content--details--card">
+          </motion.div>
+          <motion.div
+            variants={BtnHover}
+            whileHover="hover"
+            animate="animate"
+            className="tokenomics__content--details--card"
+          >
             <p>APY</p>
             <h1>161%</h1>
-          </div>
-          <div className="tokenomics__content--details--card">
+          </motion.div>
+          <motion.div
+            variants={BtnHover}
+            whileHover="hover"
+            animate="animate"
+            className="tokenomics__content--details--card"
+          >
             <p>Staked</p>
             <h1>$13k</h1>
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

@@ -1,5 +1,22 @@
 import "./Faq.scss";
 import FaqCard from "./FaqCard";
+import { motion } from "framer-motion";
+
+const listContainer = {
+  initial: {
+    opacity: 0,
+  },
+  inView: {
+    opacity: 1,
+    transition: {
+      duration: 0.01,
+      ease: "easeInOut",
+      staggerChildren: 0.3,
+      staggerDirection: -1,
+      When: "beforeChildren",
+    },
+  },
+};
 
 const faqQuestions = [
   {
@@ -33,11 +50,16 @@ const Faq = () => {
         <h1 className="faq__content--header">
           Have a question? Check out our FAQ
         </h1>
-        <div className="faq__content--questions">
+        <motion.div
+          variants={listContainer}
+          animate="initial"
+          whileInView="inView"
+          className="faq__content--questions"
+        >
           {faqQuestions.map((faq, index) => (
             <FaqCard key={index} faq={faq} />
           ))}
-        </div>
+        </motion.div>
       </div>
     </div>
   );
